@@ -1,7 +1,7 @@
 module Api
   module V1
     module Auth
-      class RegistrationsController < DeviseTokenAuth::RegistrationsController
+      class ResistrationsController < DeviseTokenAuth::ResistrationsController
         private
         def sign_up_params
           params.permit(:name, :nickname, :email, :img, :password, :password_confirmation)
