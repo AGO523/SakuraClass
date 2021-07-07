@@ -1,7 +1,11 @@
 import React, { Fragment, useEffect, useReducer } from 'react';
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 // import Button from '@material-ui/core/Button';
 // import Container from '@material-ui/core/Container';
+
+// components
+import Skeleton from '@material-ui/lab/Skeleton';
 
 //apis
 import { fetchRooms } from '../apis/rooms';
@@ -13,14 +17,17 @@ import {
   roomsReducer,
 } from '../reducers/rooms';
 
+// constants
+import { REQUEST_STATE } from '../constants';
+
 //images
 import MainLogo from '../images/logo.png';
 import MainCoverImage from '../images/main-cover-image.png';
+import RoomImage from '../images/room-image.jpg';
 
 const HeaderWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
-  padding: 4px 8px;
 `;
 
 const MainLogoImage = styled.img`
@@ -33,6 +40,32 @@ const MainCoverImageWrapper = styled.div`
 
 const MainCover = styled.img`
   height: 450px;
+`;
+
+const RoomsContentsList = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 150px;
+`;
+
+const RoomsContentWrapper = styled.div`
+  width: 450px;
+  height: 300px;
+  padding: 48px;
+`;
+
+const RoomsImageNode = styled.img`
+  width: 100%;
+`;
+
+const MainText = styled.p`
+  color: black;
+  font-size: 18px;
+`;
+
+const SubText = styled.p`
+  color: black;
+  font-size: 12px;
 `;
 
 export const Rooms = () => {
@@ -53,17 +86,31 @@ export const Rooms = () => {
     <Fragment>
       <HeaderWrapper>
         <MainLogoImage src={MainLogo} alt="main logo" />
+        <div>SakuraClass</div>
       </HeaderWrapper>
       <MainCoverImageWrapper>
         <MainCover src={MainCoverImage} alt="main cover" />
       </MainCoverImageWrapper>
-      {
-        state.roomsList.map(room =>
-          <div>
-            {room.name}
-          </div>
-        )
-      }
+      <RoomsContentsList>
+        {
+          state.fetchState === REQUEST_STATE.LOADING ?
+            <Fragment>
+              <Skeleton variant="rect" width={600} height={400} />
+              <Skeleton variant="rect" width={600} height={400} />
+              <Skeleton variant="rect" width={600} height={400} />
+            </Fragment>
+            :
+            state.roomsList.map((item, index) =>
+              <Link to={`/rooms/${item.id}/foods`} key={index} style={{ textDecoration: 'none' }}>
+                <RoomsContentWrapper>
+                  <RoomsImageNode src={RoomImage} />
+                  <MainText>{item.name}</MainText>
+                  <SubText>{`配送料：${item.fee}円 ${item.time_required}分`}</SubText>
+                </RoomsContentWrapper>
+              </Link>
+            )
+        }
+      </RoomsContentsList>
     </Fragment>
   )
 }
