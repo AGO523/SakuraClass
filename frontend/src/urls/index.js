@@ -6,3 +6,4 @@ export const roomsIndex = `${DEFAULT_API_LOCALHOST}/rooms`
 export const posts = `${DEFAULT_API_LOCALHOST}/posts`;
 // export const lineFoodsReplace = `${DEFAULT_API_LOCALHOST}/line_foods/replace`;
 export const informations = `${DEFAULT_API_LOCALHOST}/informations`;
+export const login = `${DEFAULT_API_LOCALHOST}/login`;

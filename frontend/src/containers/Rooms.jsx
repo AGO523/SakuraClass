@@ -25,13 +25,19 @@ import MainLogo from '../images/logo.png';
 import MainCoverImage from '../images/main-cover-image.png';
 import RoomImage from '../images/room-image.jpg';
 
+//topPageItem
+import TemporaryDrawer from '../components/drower';
+import CustomizedBreadcrumbs from '../components/list';
+import ButtonAppBar from '../components/appbar';
+
 const HeaderWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
+  height: 60px;
 `;
 
 const MainLogoImage = styled.img`
-  height: 40px;
+  height: 60px;
 `
 
 const MainCoverImageWrapper = styled.div`
@@ -39,7 +45,10 @@ const MainCoverImageWrapper = styled.div`
 `;
 
 const MainCover = styled.img`
-  height: 450px;
+  height: 270px;
+  width: 700px;
+  padding: 4px;
+  border-radius: 24px;
 `;
 
 const RoomsContentsList = styled.div`
@@ -51,7 +60,7 @@ const RoomsContentsList = styled.div`
 const RoomsContentWrapper = styled.div`
   width: 450px;
   height: 300px;
-  padding: 48px;
+  padding: 8px;
 `;
 
 const RoomsImageNode = styled.img`
@@ -85,8 +94,12 @@ export const Rooms = () => {
   return (
     <Fragment>
       <HeaderWrapper>
-        <MainLogoImage src={MainLogo} alt="main logo" />
-        <div>SakuraClass</div>
+        <ButtonAppBar>
+          <MainLogoImage src={MainLogo} alt="main logo" />
+          <div>SakuraClass</div>
+          <TemporaryDrawer></TemporaryDrawer>
+          <CustomizedBreadcrumbs></CustomizedBreadcrumbs>
+        </ButtonAppBar>
       </HeaderWrapper>
       <MainCoverImageWrapper>
         <MainCover src={MainCoverImage} alt="main cover" />
