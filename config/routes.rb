@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :rooms
       resources :informations
       resources :posts
+      resources :login
       mount_devise_token_auth_for 'User', at: 'auth', controllers: {
         resistrations: 'api/v1/auth/resistrations'
       }

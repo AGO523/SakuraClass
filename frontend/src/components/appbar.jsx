@@ -32,14 +32,16 @@ export default function ButtonAppBar() {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Link to={`/rooms`} style={{ textDecoration: 'none', color: 'Black' }}>
+          <Link to={`/rooms`} style={{ textDecoration: 'none', color: 'inherit' }}>
             <Typography variant="h6" className={classes.title}>
               SakuraClass
           </Typography>
           </Link>
           <TemporaryDrawer></TemporaryDrawer>
           <CustomizedBreadcrumbs></CustomizedBreadcrumbs>
-          <Button color="inherit">Login</Button>
+          <Link to={`/login`} style={{ textDecoration: 'none', color: "inherit" }}>
+            <Button color="inherit">Login</Button>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>

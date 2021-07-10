@@ -1,8 +1,6 @@
 import React, { Fragment, useEffect, useReducer } from 'react';
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
-// import Button from '@material-ui/core/Button';
-// import Container from '@material-ui/core/Container';
 
 // components
 import Skeleton from '@material-ui/lab/Skeleton';
@@ -29,6 +27,7 @@ import RoomImage from '../images/room-image.jpg';
 import TemporaryDrawer from '../components/drower';
 import CustomizedBreadcrumbs from '../components/list';
 import ButtonAppBar from '../components/appbar';
+import Login from '../containers/login';
 
 const HeaderWrapper = styled.div`
   display: flex;
