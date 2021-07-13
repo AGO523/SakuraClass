@@ -12,7 +12,7 @@ import { Rooms } from './containers/Rooms.jsx';
 import { Posts } from './containers/Posts.jsx';
 import { Informations } from './containers/Informations.jsx';
 import Login from './containers/login.jsx';
-
+import Signup from './containers/signup.jsx';
 
 function App() {
   return (
@@ -41,6 +41,12 @@ function App() {
           exact
           path="/login">
           <Login />
+        </Route>
+
+        <Route
+          exact
+          path="/signup">
+          <Signup />
         </Route>
 
       </Switch>
