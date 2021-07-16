@@ -9,14 +9,18 @@ import {
 
 // components
 import { Rooms } from './containers/Rooms.jsx';
-import { Posts } from './containers/Posts.jsx';
+import Posts from './containers/Posts.jsx';
 import { Informations } from './containers/Informations.jsx';
 import Login from './containers/login.jsx';
 import Signup from './containers/signup.jsx';
+import Header from './containers/Header.jsx';
+
+
 
 function App() {
   return (
     <Router>
+      <Header />
       <Switch>
 
         <Route

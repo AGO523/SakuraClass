@@ -31,12 +31,12 @@ export default function CustomizedBreadcrumbs() {
     <Breadcrumbs aria-label="breadcrumb">
       <StyledBreadcrumb
         component="a"
-        href="#"
+        href="/rooms"
         label="Home"
         icon={<HomeIcon fontSize="small" />}
         onClick={handleClick}
       />
-      <StyledBreadcrumb component="a" href="#" label="Study" onClick={handleClick} />
+      <StyledBreadcrumb component="a" href="/posts" label="Study" onClick={handleClick} />
       <StyledBreadcrumb
         label="Chat"
         deleteIcon={<ExpandMoreIcon />}

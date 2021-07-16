@@ -23,12 +23,6 @@ import MainLogo from '../images/logo.png';
 import MainCoverImage from '../images/main-cover-image.png';
 import RoomImage from '../images/room-image.jpg';
 
-//topPageItem
-import TemporaryDrawer from '../components/drower';
-import CustomizedBreadcrumbs from '../components/list';
-import ButtonAppBar from '../components/appbar';
-import Login from '../containers/login';
-
 const HeaderWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -77,34 +71,26 @@ const SubText = styled.p`
 `;
 
 export const Rooms = () => {
-  const [state, dispatch] = useReducer(roomsReducer, initialState);
-  useEffect(() => {
-    dispatch({ type: roomsActionTyps.FETCHING });
-    fetchRooms()
-      .then((data) =>
-        dispatch({
-          type: roomsActionTyps.FETCH_SUCCESS,
-          payload: {
-            rooms: data.rooms
-          }
-        })
-      )
-  }, [])
+  // const [state, dispatch] = useReducer(roomsReducer, initialState);
+  // useEffect(() => {
+  //   dispatch({ type: roomsActionTyps.FETCHING });
+  //   fetchRooms()
+  //     .then((data) =>
+  //       dispatch({
+  //         type: roomsActionTyps.FETCH_SUCCESS,
+  //         payload: {
+  //           rooms: data.rooms
+  //         }
+  //       })
+  //     )
+  // }, [])
   return (
     <Fragment>
-      <HeaderWrapper>
-        <ButtonAppBar>
-          <MainLogoImage src={MainLogo} alt="main logo" />
-          <div>SakuraClass</div>
-          <TemporaryDrawer></TemporaryDrawer>
-          <CustomizedBreadcrumbs></CustomizedBreadcrumbs>
-        </ButtonAppBar>
-      </HeaderWrapper>
       <MainCoverImageWrapper>
         <MainCover src={MainCoverImage} alt="main cover" />
       </MainCoverImageWrapper>
       <RoomsContentsList>
-        {
+        {/* {
           state.fetchState === REQUEST_STATE.LOADING ?
             <Fragment>
               <Skeleton variant="rect" width={600} height={400} />
@@ -121,7 +107,7 @@ export const Rooms = () => {
                 </RoomsContentWrapper>
               </Link>
             )
-        }
+        } */}
       </RoomsContentsList>
     </Fragment>
   )
