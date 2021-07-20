@@ -8,11 +8,11 @@ class Movebar extends React.Component {
   handleToPostsPage = () => {
     this.props.history.push('/posts')
   }
-  // handleToChatPage = () => {
-  //   this.props.history.push('/chats')
-  // }
   handleToRoomsPage = () => {
     this.props.history.push('/rooms')
+  }
+  handleToChatPage = () => {
+    this.props.history.push('/chats')
   }
 
   render() {
@@ -25,9 +25,9 @@ class Movebar extends React.Component {
           <Button onClick={this.handleToPostsPage}>
             posts
           </Button>
-          {/* <Button onClick={this.handleToChatPage}>
-            rootページへ遷移する
-          </Button> */}
+          <Button onClick={this.handleToChatPage}>
+            chats
+          </Button>
         </ButtonGroup>
       </div>
 

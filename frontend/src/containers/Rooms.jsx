@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 // components
 import Skeleton from '@material-ui/lab/Skeleton';
+import OutlinedCard from '../components/InfoCard';
+import BasicTextFields from '../components/form';
 
 //apis
 import { fetchRooms } from '../apis/rooms';
@@ -89,6 +91,8 @@ export const Rooms = () => {
       <MainCoverImageWrapper>
         <MainCover src={MainCoverImage} alt="main cover" />
       </MainCoverImageWrapper>
+      <BasicTextFields />
+      <OutlinedCard />
       <RoomsContentsList>
         {/* {
           state.fetchState === REQUEST_STATE.LOADING ?

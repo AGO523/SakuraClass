@@ -14,6 +14,7 @@ import { Informations } from './containers/Informations.jsx';
 import Login from './containers/login.jsx';
 import Signup from './containers/signup.jsx';
 import Header from './containers/Header.jsx';
+import Chats from './containers/Chats.jsx';
 
 
 
@@ -53,6 +54,11 @@ function App() {
           <Signup />
         </Route>
 
+        <Route
+          exact
+          path="/chats">
+          <Chats />
+        </Route>
       </Switch>
     </Router>
   );
