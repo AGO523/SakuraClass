@@ -118,8 +118,9 @@ export default function Signup() {
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
+            color="inherit"
             className={classes.submit}
+            onClick={() => this.handleTestCallApi()}
           >
             Sign Up
           </Button>
