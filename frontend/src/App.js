@@ -11,8 +11,8 @@ import {
 import { Rooms } from './containers/Rooms.jsx';
 import Posts from './containers/Posts.jsx';
 import { Informations } from './containers/Informations.jsx';
-import Login from './containers/login.jsx';
-import Signup from './containers/signup.jsx';
+import Login from './containers/Login.jsx';
+import Signup from './containers/Signup.jsx';
 import Header from './containers/Header.jsx';
 import Chats from './containers/Chats.jsx';
 

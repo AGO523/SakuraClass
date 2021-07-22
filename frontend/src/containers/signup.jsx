@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { fetchSignup } from '../apis/signup';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -48,6 +49,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Signup() {
   const classes = useStyles();
+  useEffect(() => {
+    fetchSignup()
+      .then((data) =>
+        console.log(data)
+      )
+  }, [])
+
 
   return (
     <Container component="main" maxWidth="xs">
