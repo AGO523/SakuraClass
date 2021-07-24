@@ -9,6 +9,6 @@ export const informations = `${DEFAULT_API_LOCALHOST}/informations`;
 export const login = `${DEFAULT_API_LOCALHOST}/login`;
 
 // signup
-export const signup = `${DEFAULT_API_LOCALHOST}/resistrations`;
+export const signup = `${DEFAULT_API_LOCALHOST}/auth/registrations`;
 
 export const chats = `${DEFAULT_API_LOCALHOST}/chats`;

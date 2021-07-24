@@ -56,6 +56,12 @@ export default function Signup() {
       )
   }, [])
 
+  //ユーザー認証
+  function handleTestCallApi() {
+    console.log('test submit')
+    fetchSignup()
+  }
+
 
   return (
     <Container component="main" maxWidth="xs">
@@ -128,7 +134,7 @@ export default function Signup() {
             variant="contained"
             color="inherit"
             className={classes.submit}
-            onClick={() => this.handleTestCallApi()}
+            onClick={handleTestCallApi}
           >
             Sign Up
           </Button>
