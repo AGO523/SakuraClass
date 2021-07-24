@@ -6,9 +6,9 @@ Rails.application.routes.draw do
       resources :informations
       resources :posts
       resources :login
-      resources :resistrations
+      resources :registrations
       mount_devise_token_auth_for 'User', at: 'auth', controllers: {
-        resistrations: 'api/v1/auth/resistrations'
+        registrations: 'api/v1/auth/registrations'
       }
     end
   end
