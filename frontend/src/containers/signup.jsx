@@ -49,12 +49,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Signup() {
   const classes = useStyles();
-  useEffect(() => {
-    fetchSignup()
-      .then((data) =>
-        console.log(data)
-      )
-  }, [])
+  // useEffect(() => {
+  //   fetchSignup()
+  //     .then((data) =>
+  //       console.log(data)
+  //     )
+  // }, [])
 
   //ユーザー認証
   function handleTestCallApi() {
