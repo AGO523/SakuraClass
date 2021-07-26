@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { fetchSignup } from '../apis/signup';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -49,17 +49,34 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Signup() {
   const classes = useStyles();
-  // useEffect(() => {
-  //   fetchSignup()
-  //     .then((data) =>
-  //       console.log(data)
-  //     )
-  // }, [])
+  const [name, setName] = useState()
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+  const [passwordConfirm, setPasswordConfirm] = useState()
+
+  function handleChangeName(event) {
+    setName(event.target.value)
+  }
+  function handleChangeEmail(event) {
+    setEmail(event.target.value)
+  }
+  function handleChangePassword(event) {
+    setPassword(event.target.value)
+  }
+  function handleChangePasswordConfirm(event) {
+    setPasswordConfirm(event.target.value)
+  }
 
   //ユーザー認証
   function handleTestCallApi() {
     console.log('test submit')
-    fetchSignup()
+    const params = {
+      Name: name,
+      email: email,
+      password: password,
+      password_confirmation: passwordConfirm
+    }
+    fetchSignup(params)
   }
 
 
@@ -85,6 +102,7 @@ export default function Signup() {
                 id="Name"
                 label="名前"
                 autoFocus
+                onChange={handleChangeName}
               />
             </Grid>
             <Grid item xs={12}>
@@ -96,6 +114,7 @@ export default function Signup() {
                 label="メールアドレス"
                 name="email"
                 autoComplete="email"
+                onChange={handleChangeEmail}
               />
             </Grid>
             <Grid item xs={12}>
@@ -108,6 +127,7 @@ export default function Signup() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={handleChangePassword}
               />
             </Grid>
             <Grid item xs={12}>
@@ -119,6 +139,7 @@ export default function Signup() {
                 label="パスワードの確認"
                 type="password_comfirmation"
                 id="password_comfirmation"
+                onChange={handleChangePasswordConfirm}
               />
             </Grid>
             <Grid item xs={12}>
