@@ -1,12 +1,16 @@
 import axios from 'axios';
 import { signup } from '../urls/index'
-// import Cookies from "js-cookie"
+import Cookies from "js-cookie"
 
 // サインアップ（新規アカウント作成）
 export const fetchSignup = (params) => {
   return axios.post(signup, { params })
     .then(res => {
       console.log(res)
+      // アカウント作成と同時にサインイン
+      Cookies.set("_access_token", res.headers["access-token"])
+      Cookies.set("_client", res.headers["client"])
+      Cookies.set("_uid", res.headers["uid"])
     })
     .catch((e) => console.error(e))
 }
