@@ -73,7 +73,7 @@ export default function Signup() {
   function handleTestCallApi() {
     console.log('test submit')
     const params = {
-      Name: name,
+      name: name,
       email: email,
       password: password,
       password_confirmation: passwordConfirm
