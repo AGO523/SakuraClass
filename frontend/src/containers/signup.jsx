@@ -14,6 +14,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -54,6 +55,7 @@ export default function Signup() {
   const [password, setPassword] = useState()
   const [passwordConfirm, setPasswordConfirm] = useState()
 
+  // ここはリファクタリングできる？
   function handleChangeName(event) {
     setName(event.target.value)
   }
@@ -90,83 +92,83 @@ export default function Signup() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <TextField
-                autoComplete="name"
-                name="Name"
-                variant="outlined"
-                required
-                fullWidth
-                id="Name"
-                label="名前"
-                autoFocus
-                onChange={handleChangeName}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="email"
-                label="メールアドレス"
-                name="email"
-                autoComplete="email"
-                onChange={handleChangeEmail}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                name="password"
-                label="パスワード"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-                onChange={handleChangePassword}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                name="password_comfirmation"
-                label="パスワードの確認"
-                type="password_comfirmation"
-                id="password_comfirmation"
-                onChange={handleChangePasswordConfirm}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              {/* <FormControlLabel
+        {/* <form className={classes.form} noValidate> */}
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <TextField
+              autoComplete="name"
+              name="Name"
+              variant="outlined"
+              required
+              fullWidth
+              id="Name"
+              label="名前"
+              autoFocus
+              onChange={handleChangeName}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              variant="outlined"
+              required
+              fullWidth
+              id="email"
+              label="メールアドレス"
+              name="email"
+              autoComplete="email"
+              onChange={handleChangeEmail}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              variant="outlined"
+              required
+              fullWidth
+              name="password"
+              label="パスワード"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              onChange={handleChangePassword}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              variant="outlined"
+              required
+              fullWidth
+              name="password_comfirmation"
+              label="パスワードの確認"
+              type="password_comfirmation"
+              id="password_comfirmation"
+              onChange={handleChangePasswordConfirm}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            {/* <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                 label="I want to receive inspiration, marketing promotions and updates via email."
               /> */}
-            </Grid>
           </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="inherit"
-            className={classes.submit}
-            onClick={handleTestCallApi}
-          >
-            Sign Up
+        </Grid>
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          color="inherit"
+          className={classes.submit}
+          onClick={handleTestCallApi}
+        >
+          Sign Up
           </Button>
-          <Grid container justifyContent="flex-end">
-            <Grid item>
-              <Link href="/login" variant="body2">
-                ログインはこちらから
+        <Grid container justifyContent="flex-end">
+          <Grid item>
+            <Link href="/login" variant="body2">
+              ログインはこちらから
               </Link>
-            </Grid>
           </Grid>
-        </form>
+        </Grid>
+        {/* </form> */}
       </div>
       <Box mt={5}>
         <Copyright />
